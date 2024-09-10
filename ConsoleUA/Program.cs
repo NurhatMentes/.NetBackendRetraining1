@@ -17,9 +17,18 @@ static void ProductTest()
 {
     ProductManager productManager = new ProductManager(new EfProductDal());
 
-    foreach (var item in productManager.GetAll())
+    var result = productManager.GetAll();
+
+    if (result.IsSuccess)
     {
-        Console.WriteLine(item.ProductName);
+        foreach (var item in result.Data)
+        {
+            Console.WriteLine(item.ProductName);
+        }
+    }
+    else
+    {
+        Console.WriteLine(result.Message);
     }
 }
 
@@ -27,9 +36,18 @@ static void ProductTest2()
 {
     ProductManager productManager = new ProductManager(new EfProductDal());
 
-    foreach (var item in productManager.GetProductDetails())
+    var result = productManager.GetProductDetails(); 
+
+     if (result.IsSuccess)
     {
-        Console.WriteLine(item.ProductName + " : " + item.CategoryName);
+        foreach (var item in result.Data)
+        {
+            Console.WriteLine(item.ProductName + " : " + item.CategoryName);
+        }
+    }
+    else
+    {
+        Console.WriteLine(result.Message);
     }
 }
 

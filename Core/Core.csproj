@@ -7,15 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Concrete\Product.cs~RF1c8a94.TMP" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Abstract\" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\Core\Core.csproj" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.8" />
   </ItemGroup>
 
 </Project>

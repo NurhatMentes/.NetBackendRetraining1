@@ -6,7 +6,7 @@ using DataAccess.Concrete.InMemory;
 
 //ProductTest();
 
-ProductTest2();
+//ProductTest2();
 
 //CategoryTest();
 
@@ -15,48 +15,48 @@ ProductTest2();
 //****Test Methods****
 static void ProductTest()
 {
-    ProductManager productManager = new ProductManager(new EfProductDal());
+    //ProductManager productManager = new ProductManager(new EfProductDal());
 
-    var result = productManager.GetAll();
+    //var result = productManager.GetAll();
 
-    if (result.IsSuccess)
-    {
-        foreach (var item in result.Data)
-        {
-            Console.WriteLine(item.ProductName);
-        }
-    }
-    else
-    {
-        Console.WriteLine(result.Message);
-    }
+    //if (result.IsSuccess)
+    //{
+    //    foreach (var item in result.Data)
+    //    {
+    //        Console.WriteLine(item.ProductName);
+    //    }
+    //}
+    //else
+    //{
+    //    Console.WriteLine(result.Message);
+    //}
 }
 
 static void ProductTest2()
 {
-    ProductManager productManager = new ProductManager(new EfProductDal());
+    //ProductManager productManager = new ProductManager(new EfProductDal());
 
-    var result = productManager.GetProductDetails(); 
+    //var result = productManager.GetProductDetails(); 
 
-     if (result.IsSuccess)
-    {
-        foreach (var item in result.Data)
-        {
-            Console.WriteLine(item.ProductName + " : " + item.CategoryName);
-        }
-    }
-    else
-    {
-        Console.WriteLine(result.Message);
-    }
+    // if (result.IsSuccess)
+    //{
+    //    foreach (var item in result.Data)
+    //    {
+    //        Console.WriteLine(item.ProductName + " : " + item.CategoryName);
+    //    }
+    //}
+    //else
+    //{
+    //    Console.WriteLine(result.Message);
+    //}
 }
 
 static void CategoryTest()
 {
-    CategoryManager categoryManager = new CategoryManager(new EfCategoryDal());
+    //CategoryManager categoryManager = new CategoryManager(new EfCategoryDal());
 
-    foreach (var item in categoryManager.GetAll())
-    {
-        Console.WriteLine(item.CategoryName);
-    }
+    //foreach (var item in categoryManager.GetAll())
+    //{
+    //    Console.WriteLine(item.CategoryName);
+    //}
 }

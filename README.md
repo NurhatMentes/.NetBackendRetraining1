@@ -6,7 +6,7 @@ One year after I took a break from writing, I did a project with enterprise soft
 
 
 
-## Technologies and methods used
+## Technologies and methods/architectures used
 
 -Autofac 8.1.0
 
@@ -17,6 +17,15 @@ One year after I took a break from writing, I did a project with enterprise soft
 -Interceptors
 
 -AOP
+
+-Cache (MemoryCache)
+
+-Authorization 
+
+-Transaction..
+
+-Performance Aspect..
+
 
 
   

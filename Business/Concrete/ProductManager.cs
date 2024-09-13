@@ -59,7 +59,7 @@ namespace Business.Concrete
 
         [PerformanceAspect(5)]
         [CacheAspect]
-        [SecuredOperation("Admin")]
+        //[SecuredOperation("Admin")]
         public IDataResult<List<Product>> GetAll()
         {
             if (DateTime.Now.Hour == 23)

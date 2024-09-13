@@ -16,7 +16,7 @@ namespace WepAPI.Controllers
             _productService = productService;
         }
 
-        [HttpGet("Get All")]
+        [HttpGet("GetAll")]
         public IActionResult GetAll()
         {
             var result = _productService.GetAll();
@@ -27,7 +27,7 @@ namespace WepAPI.Controllers
             return BadRequest(result);
         }
 
-        [HttpGet("Get by Id")]
+        [HttpGet("GetById")]
         public IActionResult Get(int productId)
         {
             var result = _productService.GetById(productId);
@@ -38,7 +38,7 @@ namespace WepAPI.Controllers
             return BadRequest(result);
         }
 
-        [HttpGet("Get All By Category Id")]
+        [HttpGet("GetAllByCategoryId")]
         public IActionResult GetAllByCategoryId(int categoryId)
         {
             var result = _productService.GetAllByCategoryId(categoryId);
@@ -49,7 +49,7 @@ namespace WepAPI.Controllers
             return BadRequest(result);
         }
 
-        [HttpPost]
+        [HttpPost("ProductAdd")]
         public IActionResult Post([FromBody] Product product)
         {
             var result = _productService.Add(product);

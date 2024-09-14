@@ -29,11 +29,12 @@ namespace Business.Concrete
         }
 
 
-        [SecuredOperation("Admin")]
+        //[SecuredOperation("Admin")]
         [ValidationAspect(typeof(ProductValidator))]
         public IResult Add(Product product)
         {
-            var result = BusinessRules.Run(CheckIfProductCountOfCategoryCorrect(product.CategoryId), CheckIfProductNameAlreadyExists(product.ProductName));
+            var result = BusinessRules.Run(CheckIfProductCountOfCategoryCorrect(product.CategoryId), 
+                CheckIfProductNameAlreadyExists(product.ProductName), CheckIfProductUnitsInStockMin(product.UnitsInStock));
 
             if (result != null)
             {
@@ -139,7 +140,14 @@ namespace Business.Concrete
             }
             return new SuccessResult();
         }
+        private IResult CheckIfProductUnitsInStockMin(int stock)
+        {       
+            if (stock <= 1)
+            {
+                return new ErrorResult(Messages.ProductUnitsInStockMinError);
+            }
+            return new SuccessResult();
+        }
 
-       
     }
 }

@@ -9,6 +9,7 @@ namespace Business.Constants
 {
     public static class Messages
     {
+        public static string ProductNotFound = "Ürün bulunamadı";
         public static string ProductUnitsInStockMinError = "Stok adeti en az 2 olabilir";
         public static string ProductUpdated = "Ürün Güncellendi";
         public static string ProductAdded = "Ürün Eklendi";

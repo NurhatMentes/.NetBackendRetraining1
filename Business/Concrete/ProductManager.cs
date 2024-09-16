@@ -29,7 +29,7 @@ namespace Business.Concrete
         }
 
 
-        //[SecuredOperation("Admin")]
+        [SecuredOperation("Admin")]
         [ValidationAspect(typeof(ProductValidator))]
         public IResult Add(Product product)
         {
@@ -49,14 +49,16 @@ namespace Business.Concrete
         [ValidationAspect(typeof(ProductValidator))]
         public IResult Update(Product product)
         {
-            var result = BusinessRules.Run(CheckIfProductNameAlreadyExists(product.ProductName));
-            if (result != null)
+            var existingProduct = _productDal.Get(p => p.ProductId == product.ProductId);
+            if (existingProduct == null)
             {
-                return result;
+                return new ErrorResult(Messages.ProductNotFound);
             }
+
             _productDal.Update(product);
             return new SuccessResult(Messages.ProductUpdated);
         }
+
 
         [PerformanceAspect(5)]
         [CacheAspect]

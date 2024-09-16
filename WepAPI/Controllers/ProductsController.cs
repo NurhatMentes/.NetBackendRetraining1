@@ -59,5 +59,23 @@ namespace WepAPI.Controllers
             }
             return BadRequest(result);
         }
+
+        [HttpPut("ProductUpdate")]
+        public IActionResult Update([FromBody] Product product)
+        {
+            if (product == null || !ModelState.IsValid)
+            {
+                return BadRequest("Invalid product data.");
+            }
+
+            var result = _productService.Update(product);
+            if (result.IsSuccess)
+            {
+                return Ok(result);
+            }
+
+            return BadRequest(result);
+        }
+
     }
 }

@@ -28,7 +28,7 @@ namespace WepAPI.Controllers
             var result = _authService.CreateAccessToken(userToLogin.Data);
             if (result.IsSuccess)
             {
-                return Ok(result.Data);
+                return Ok(result);
             }
 
             return BadRequest(result.Message);

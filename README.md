@@ -1,7 +1,9 @@
 # .Net 8 - Backend (N-layer) with Angular UI
 
 
-This project serves as a recall and skill-testing exercise after a year-long break from software development. It implements a multi-layered enterprise software architecture, adhering to SOLID principles. The backend is built with .Net 8, and the UI is developed using Angular. This project utilizes Microsoft's **Northwind** database, demonstrating real-world scenarios in data management and business logic implementation.
+**This project serves as a recall and skill-testing exercise after a year-long break from software development**. 
+
+It implements a multi-layered enterprise software architecture, adhering to SOLID principles. The backend is built with .Net 8, and the UI is developed using Angular. This project utilizes Microsoft's **Northwind** database, demonstrating real-world scenarios in data management and business logic implementation.
 
 [![SOLID Principles](https://img.shields.io/badge/SOLID-Compliant-green)](https://en.wikipedia.org/wiki/SOLID)
 
@@ -37,12 +39,45 @@ This project integrates several modern technologies and development patterns to 
 The project follows a clean architecture with well-separated concerns, ensuring long-term maintainability and testability.
 
 ```bash
-├── src
-│   ├── Application
-│   ├── Domain
-│   ├── Infrastructure
-│   └── UI
-├── tests (will be made)
-│   ├── UnitTests 
-│   └── IntegrationTests
-└── docs
+├── Business
+│   │   ├── Abstract
+│   │   └── Concrete
+│   ├── Aspects
+│   │   └── Autofac
+│   ├── DependencyResolves
+│   │   └── Autofac
+│   ├── ValidationRules
+│       └── FluentValidation
+├── ConsoleUA
+├── Core
+│   ├── Aspects
+│   │   └── Autofac
+│   ├── CrossCuttingConcerns
+│   │   ├── Caching
+│   │   └── Validation
+│   └── Entities
+│   └── Extensions
+│   └── Utilities
+│       ├── Business
+│       ├── IaC
+│       ├── Interceptors
+│       └── Results
+│       ├── Security
+│       │   ├── Encryption
+│       │   ├── Hashing
+│       │   └── JWT
+│   └── DataAccess
+│       ├── EntityFramework
+│   └── DependencyResolvers
+├── DataAccess
+│   ├── Dependencies
+│   │   ├── Abstract
+│   │   └── Concrete
+│   ├── EntityFramework  
+├── Entities
+│   ├── Abstract
+│   ├── Concrete
+│   └── DTOs
+├── WebAPI
+
+
